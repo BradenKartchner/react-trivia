@@ -16,6 +16,11 @@
 
 -   create Favicon for website
 
+## History of installed packages
+
+"npm install --save bootstrap"
+"npm install reactstrap"
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
