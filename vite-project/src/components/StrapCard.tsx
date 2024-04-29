@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // relationship between bootstrap and vanilla css?
 // bootstrap vs tailwind vs vanilla css?
 
-function TestCard() {
+function StrapCard() {
     return (
         <>
             <Card body color="secondary" inverse style={{ width: "18rem" }}>
@@ -19,4 +19,4 @@ function TestCard() {
     );
 }
 
-export default TestCard;
+export default StrapCard;

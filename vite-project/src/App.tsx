@@ -1,5 +1,5 @@
 //import { useState } from "react";
-import TestCard from "./components/TestCard";
+import StrapCard from "./components/StrapCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <div className="bg-dark">
-                <TestCard />
+                <StrapCard />
             </div>
         </>
     );
