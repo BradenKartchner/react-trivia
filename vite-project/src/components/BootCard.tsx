@@ -2,10 +2,16 @@
 // see this link: https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-grid-system.php
 // and scroll down a bit to see how to structure a website to work on multiple different size screens
 
+import "./BootCard.css";
+
 function BootCard() {
     return (
         <>
-            <div className="card" style={{ width: "22rem" }}>
+            <div
+                className="card"
+                style={{ width: "22rem" }}
+                data-bs-theme="dark"
+            >
                 <div className="card-body">
                     <h5 className="card-title">Card title here</h5>
                     <h6 className="card-subtitle mb-2 text-muted">

@@ -1,6 +1,9 @@
-/* So everything in this gets overridden by the bootstrap files I think...
-*  how to change elements without changing the bootstrap files?
+/* Everything here will overwrite the higher level CSS files 
+* just have to remember to import this into BootCard.tsx to make it work
 */
 .btn {
-    background-color: lightgreen;
+}
+
+.card-title h5 {
+    color: "white";
 }
