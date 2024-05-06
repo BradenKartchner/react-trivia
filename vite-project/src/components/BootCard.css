@@ -1,9 +1,24 @@
 /* Everything here will overwrite the higher level CSS files 
 * just have to remember to import this into BootCard.tsx to make it work
 */
-.btn {
+.card div {
+    width: 22rem;
+    place-items: center;
 }
 
-.card-title h5 {
-    color: "white";
+.btn {
+    display: flex;
+    flex-direction: column;
+    margin: 0.25rem;
+    place-items: center;
+}
+
+button {
+    place-items: center;
+}
+
+.card-body p {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 }
