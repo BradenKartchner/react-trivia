@@ -1,0 +1,20 @@
+#quizImage.card-img-top {
+    width: 10rem;
+    align-self: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-body p.card-text.answer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.card-body p.card-text.no-margin {
+    margin-bottom: 0;
+}
+
+p.card-text.no-margin button {
+    font-size: 2rem;
+}

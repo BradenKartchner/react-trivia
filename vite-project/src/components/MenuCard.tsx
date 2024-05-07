@@ -24,7 +24,10 @@ function MenuCard({ highScores }: Props) {
                     <h6 className="card-subtitle mb-2 text-muted">
                         because life wasn't already hard enough {smileEmoji}
                     </h6>
-                    <p className="card-text" style={{ marginTop: "3rem" }}>
+                    <p
+                        className="card-text menu-buttons"
+                        style={{ marginTop: "3rem" }}
+                    >
                         {Object.keys(highScores).map((item, index) => {
                             return (
                                 <Fragment key={`${item}${index}`}>

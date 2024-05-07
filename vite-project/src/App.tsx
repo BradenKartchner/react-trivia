@@ -1,5 +1,6 @@
 /*
-TODO: use .map to make the buttons for MenuCard
+TODO: make end card to display quiz results
+TODO: modify MenuCard to have 3 columns: difficulty, Quizzes, high score
 TODO: media queries for:
 max height of the cards based on screen size
 max width of the cards based on screen size
@@ -12,6 +13,7 @@ fix button onHover to do something (see how bootstrap does it for its classes?)
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuCard from "./components/MenuCard";
+import QuizCard from "./components/QuizCard";
 
 import "./App.css";
 
@@ -40,6 +42,7 @@ function App() {
         <>
             <div className="bg-dark">
                 <MenuCard highScores={highScores} />
+                <QuizCard />
             </div>
         </>
     );
