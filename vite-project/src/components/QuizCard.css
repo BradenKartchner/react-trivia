@@ -18,3 +18,12 @@
 p.card-text.no-margin button {
     font-size: 2rem;
 }
+
+p.card-text.score-container {
+    margin-bottom: 0.5rem;
+}
+
+div.progress-stacked.my-progress {
+    width: 80%;
+    margin: auto;
+}
