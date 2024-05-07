@@ -1,5 +1,6 @@
 import "./MenuCard.css";
 import { ScoreObject } from "../App";
+import { Fragment } from "react/jsx-runtime";
 
 interface Props {
     highScores: ScoreObject;
@@ -7,6 +8,13 @@ interface Props {
 
 function MenuCard({ highScores }: Props) {
     const smileEmoji = String.fromCodePoint(0x1f92a);
+    const quizNames: string[] = [
+        "Element symbol and name",
+        "Element trivia",
+        "Molecular formulae",
+        "Biological molecules",
+        "Amino acid names",
+    ];
 
     return (
         <>
@@ -17,6 +25,36 @@ function MenuCard({ highScores }: Props) {
                         because life wasn't already hard enough {smileEmoji}
                     </h6>
                     <p className="card-text" style={{ marginTop: "3rem" }}>
+                        {Object.keys(highScores).map((item, index) => {
+                            return (
+                                <Fragment key={`${item}${index}`}>
+                                    <button
+                                        type="button"
+                                        className={`btn btn-${
+                                            index + 1
+                                        } quiz-name`}
+                                    >
+                                        {quizNames[index]}
+                                    </button>
+                                    <span className="high-score">
+                                        High Score:
+                                        <br />
+                                        {highScores[item as keyof ScoreObject]}
+                                        /20
+                                    </span>
+                                </Fragment>
+                            );
+                        })}
+                    </p>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default MenuCard;
+
+/*
                         <button type="button" className="btn btn-1 quiz-name">
                             Button 1
                         </button>
@@ -57,11 +95,4 @@ function MenuCard({ highScores }: Props) {
                             <br />
                             {highScores.quiz5Score}/20
                         </span>
-                    </p>
-                </div>
-            </div>
-        </>
-    );
-}
-
-export default MenuCard;
+*/

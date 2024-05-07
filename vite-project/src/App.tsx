@@ -33,7 +33,7 @@ function App() {
     };
 
     // state variables
-    // see: https://react.dev/learn/updating-objects-in-state
+    // for objects see: https://react.dev/learn/updating-objects-in-state
     const [highScores, setHighScores] =
         useState<ScoreObject>(initialScoreObject);
     return (
