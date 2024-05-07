@@ -1,9 +1,8 @@
+// Basic example of a Card using ReactStrap library
+// I don't like how inflexible this is, I will use regular Bootstrap instead
+
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// use bootstrap instead of reactstrap?
-// relationship between bootstrap and vanilla css?
-// bootstrap vs tailwind vs vanilla css?
 
 function StrapCard() {
     return (

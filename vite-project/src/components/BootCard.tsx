@@ -1,4 +1,7 @@
-// use bootstrap or reactstrap? maybe just try bootstrap first
+// basic example of a Card using Bootstrap classes
+// Expanding this basic card into QuizCard to use for the app
+
+// screen size responsive layouts:
 // see this link: https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/bootstrap-grid-system.php
 // and scroll down a bit to see how to structure a website to work on multiple different size screens
 
@@ -18,21 +21,18 @@ function BootCard() {
                         begin to wrap as we get closer to 22rem of width? Yes it
                         does!!
                     </p>
-                    <p className="card-text">
+                    <p className="card-text" style={{ marginTop: "1rem" }}>
                         <button type="button" className="btn btn-primary">
-                            Primary
+                            Button 1
                         </button>
                         <button type="button" className="btn btn-secondary">
-                            Secondary
+                            Button 2
+                        </button>
+                        <button type="button" className="btn btn-danger">
+                            Button 3
                         </button>
                         <button type="button" className="btn btn-success">
-                            Success
-                        </button>
-                        <button
-                            type="button"
-                            className="btn btn-outline-danger"
-                        >
-                            Danger
+                            Button 4
                         </button>
                     </p>
                 </div>

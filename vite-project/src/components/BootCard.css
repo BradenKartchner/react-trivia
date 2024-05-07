@@ -2,7 +2,7 @@
 * just have to remember to import this into BootCard.tsx to make it work
 */
 .card div {
-    width: 22rem;
+    width: 20rem;
     place-items: center;
 }
 
