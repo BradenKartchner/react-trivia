@@ -4,9 +4,10 @@
 
 -   Quiz #1: Element name and symbol
 -   Quiz #2: Element trivia
--   Quiz #3 (hard): Match common molecules to molecular formula
+-   Quiz #3 (hard): Match common molecules to molecular formula (inc. polyatomic ions, etc?)
 -   Quiz #4 (very hard): Match picture of biological molecule to name
 -   Quiz #5 (extreme): Match amino acid structure to its name
+-   extra ideas: spot the imposter element name
 
 ## Optional features to try and implement
 

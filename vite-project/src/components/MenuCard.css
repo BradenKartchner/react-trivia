@@ -1,0 +1,50 @@
+.btn-1 {
+    background-color: rgba(74, 105, 189, 1);
+}
+
+.btn-2 {
+    background-color: rgba(60, 99, 130, 1);
+}
+
+.btn-3 {
+    background-color: rgba(30, 55, 153, 1);
+}
+
+.btn-4 {
+    background-color: rgba(10, 61, 98, 1);
+}
+
+.btn-5 {
+    background-color: rgba(12, 36, 97, 1);
+}
+
+.card div {
+    width: 24rem;
+    place-items: center;
+}
+
+.btn {
+    margin: 0.5rem;
+    place-items: center;
+}
+
+button {
+    place-items: center;
+}
+
+.card-body p {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+/*
+.quiz-name {
+}
+*/
+
+.high-score {
+    font-size: 0.8em;
+    align-self: center;
+    text-align: center;
+}
