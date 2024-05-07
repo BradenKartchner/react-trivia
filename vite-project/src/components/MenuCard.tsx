@@ -21,31 +21,41 @@ function MenuCard({ highScores }: Props) {
                             Button 1
                         </button>
                         <span className="high-score">
-                            High Score: {highScores.quiz1Score}/20
+                            High Score:
+                            <br />
+                            {highScores.quiz1Score}/20
                         </span>
                         <button type="button" className="btn btn-2 quiz-name">
                             Button 2
                         </button>
                         <span className="high-score">
-                            High Score: {highScores.quiz2Score}/20
+                            High Score:
+                            <br />
+                            {highScores.quiz2Score}/20
                         </span>
                         <button type="button" className="btn btn-3 quiz-name">
                             Button 3
                         </button>
                         <span className="high-score">
-                            High Score: {highScores.quiz3Score}/20
+                            High Score:
+                            <br />
+                            {highScores.quiz3Score}/20
                         </span>
                         <button type="button" className="btn btn-4 quiz-name">
                             Button 4
                         </button>
                         <span className="high-score">
-                            High Score: {highScores.quiz4Score}/20
+                            High Score:
+                            <br />
+                            {highScores.quiz4Score}/20
                         </span>
                         <button type="button" className="btn btn-5 quiz-name">
                             Button 5
                         </button>
                         <span className="high-score">
-                            High Score: {highScores.quiz5Score}/20
+                            High Score:
+                            <br />
+                            {highScores.quiz5Score}/20
                         </span>
                     </p>
                 </div>
