@@ -25,6 +25,7 @@ span.question-span {
     outline: 0.4rem solid aqua;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .card-body p.card-text.answer-buttons {

@@ -1,3 +1,7 @@
+/**
+ * TODO: make a difficulty column that doesn't appear on smaller screens?
+ */
+
 import "./MenuCard.css";
 import { ScoreObject } from "../App";
 import { Fragment } from "react/jsx-runtime";
@@ -9,7 +13,7 @@ interface Props {
 function MenuCard({ highScores }: Props) {
     const smileEmoji = String.fromCodePoint(0x1f92a);
     const quizNames: string[] = [
-        "Element symbol and name",
+        "Element name",
         "Element trivia",
         "Molecular formulae",
         "Biological molecules",
@@ -28,6 +32,8 @@ function MenuCard({ highScores }: Props) {
                         className="card-text menu-buttons"
                         style={{ marginTop: "3rem" }}
                     >
+                        <span className="label-span">Quizzes!</span>
+                        <span className="label-span">High Scores:</span>
                         {Object.keys(highScores).map((item, index) => {
                             return (
                                 <Fragment key={`${item}${index}`}>
@@ -40,8 +46,6 @@ function MenuCard({ highScores }: Props) {
                                         {quizNames[index]}
                                     </button>
                                     <span className="high-score">
-                                        High Score:
-                                        <br />
                                         {highScores[item as keyof ScoreObject]}
                                         /20
                                     </span>

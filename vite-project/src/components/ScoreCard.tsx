@@ -1,3 +1,7 @@
+/**
+ * TODO: display either "New high score!" or "high score: x/20" in the subtitle conditionally
+ */
+
 import "./ScoreCard.css";
 
 function ScoreCard() {

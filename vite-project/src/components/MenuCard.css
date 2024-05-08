@@ -1,21 +1,47 @@
+/* hover color: take each number in the rgb and multiply by 0.85 */
 .btn-1 {
     background-color: rgba(74, 105, 189, 1);
+    transition: background-color 0.15s;
+}
+
+.btn-1:hover {
+    background-color: rgb(63, 89, 161);
 }
 
 .btn-2 {
     background-color: rgba(60, 99, 130, 1);
+    transition: background-color 0.15s;
+}
+
+.btn-2:hover {
+    background-color: rgb(51, 84, 111);
 }
 
 .btn-3 {
     background-color: rgba(30, 55, 153, 1);
+    transition: background-color 0.15s;
+}
+
+.btn-3:hover {
+    background-color: rgb(26, 47, 130);
 }
 
 .btn-4 {
     background-color: rgba(10, 61, 98, 1);
+    transition: background-color 0.15s;
+}
+
+.btn-4:hover {
+    background-color: rgb(9, 52, 83);
 }
 
 .btn-5 {
     background-color: rgba(12, 36, 97, 1);
+    transition: background-color 0.15s;
+}
+
+.btn-5:hover {
+    background-color: rgb(10, 31, 82);
 }
 
 .card div {
@@ -28,6 +54,12 @@
     place-items: center;
 }
 
+.label-span {
+    margin-top: auto;
+    vertical-align: bottom;
+    margin-bottom: 0.5rem;
+}
+
 button {
     place-items: center;
 }
@@ -35,7 +67,7 @@ button {
 .card-body p.card-text.menu-buttons {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 /*
@@ -44,7 +76,7 @@ button {
 */
 
 .high-score {
-    font-size: 0.8em;
+    font-size: 1rem;
     align-self: center;
     text-align: center;
 }
