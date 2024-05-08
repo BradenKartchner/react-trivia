@@ -1,6 +1,9 @@
 /**
- * TODO: add button to the top left(?) to return to quiz menu
  * TODO: map over eventual array of questions answered to return progress bar segments
+ * TODO: make previous question button not appear for question 1 and next not appear for q20
+ * TODO: conditional rendering for either a span or an img depending on which quiz it is, also
+ * create conditional classes for what type of span (quiz 1 span, text span for quiz 2, etc)
+ * Quiz 1 and 3 can share classes, quiz 4 and 5 are img, quiz 2 is the only real text one
  */
 
 import "./QuizCard.css";
@@ -11,7 +14,7 @@ function QuizCard() {
     const sampleWidth = "15%";
     return (
         <>
-            <div className="card" data-bs-theme="dark">
+            <div className="card quiz-card" data-bs-theme="dark">
                 <div className="card-body">
                     <h5 className="card-title">Question 1/20</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
@@ -21,12 +24,7 @@ function QuizCard() {
                         <button className="btn change-question">
                             {leftArrow}
                         </button>
-                        <img
-                            src="./quiz1images/question1.png"
-                            className="card-img-top quiz-photo"
-                            alt="Quiz 1 picture of element symbol"
-                            id="quizImage"
-                        ></img>
+                        <span className="question-span">H</span>
                         <button className="btn change-question">
                             {rightArrow}
                         </button>
@@ -71,11 +69,16 @@ function QuizCard() {
                             style={{ width: sampleWidth }}
                         >
                             <div
-                                className="progress-bar"
+                                className="progress-bar bg-danger"
                                 style={{ height: "1rem" }}
                             ></div>
                         </div>
                     </div>
+                    <p className="card-text exit-button-container">
+                        <button className="btn btn-secondary">
+                            Return to main menu
+                        </button>
+                    </p>
                 </div>
             </div>
         </>
@@ -83,3 +86,12 @@ function QuizCard() {
 }
 
 export default QuizCard;
+
+/** Don't delete! Save for conditional rendering of img vs span for the question
+ *                      <img
+                            src="./quiz1images/question1.png"
+                            className="card-img-top quiz-photo"
+                            alt="Quiz 1 picture of element symbol"
+                            id="quizImage"
+                        ></img>
+ */

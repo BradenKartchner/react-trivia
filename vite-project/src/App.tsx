@@ -14,6 +14,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuCard from "./components/MenuCard";
 import QuizCard from "./components/QuizCard";
+import ScoreCard from "./components/ScoreCard";
 
 import "./App.css";
 
@@ -43,6 +44,7 @@ function App() {
             <div className="bg-dark">
                 <MenuCard highScores={highScores} />
                 <QuizCard />
+                <ScoreCard />
             </div>
         </>
     );

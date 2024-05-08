@@ -1,3 +1,10 @@
+div.card.quiz-card {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+}
+
 #quizImage.card-img-top {
     width: 10rem;
     align-self: center;
@@ -5,14 +12,35 @@
     margin-bottom: 2rem;
 }
 
+span.question-span {
+    display: inline-flex;
+    height: 10rem;
+    width: 10rem;
+    background-color: rgb(224, 255, 255);
+    color: black;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-weight: bold;
+    outline: 0.4rem solid aqua;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 .card-body p.card-text.answer-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 1.5rem;
 }
 
 .card-body p.card-text.no-margin {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 p.card-text.no-margin button {
@@ -26,4 +54,8 @@ p.card-text.score-container {
 div.progress-stacked.my-progress {
     width: 80%;
     margin: auto;
+}
+
+p.card-text.exit-button-container {
+    margin-top: 0.5rem;
 }

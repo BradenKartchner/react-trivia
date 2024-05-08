@@ -1,0 +1,41 @@
+h6.card-subtitle {
+    margin-top: 0.5rem;
+}
+
+p.card-text.results-display {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+span.score-box {
+    display: inline-flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+.true-box {
+    background-color: rgb(25, 135, 83);
+    transition: background-color 0.15s;
+}
+
+.true-box:hover {
+    background-color: rgb(21, 115, 71);
+}
+
+.false-box {
+    background-color: rgb(220, 52, 68);
+    transition: background-color 0.15s;
+}
+
+.false-box:hover {
+    background-color: rgb(187, 45, 59);
+}
