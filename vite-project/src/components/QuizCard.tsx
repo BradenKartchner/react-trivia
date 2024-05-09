@@ -1,10 +1,7 @@
 /**
- * TODO: map over eventual array of questions answered to return progress bar segments
  * TODO: conditional rendering for either a span or an img depending on which quiz it is, also
  * create conditional classes for what type of span (quiz 1 span, text span for quiz 2, etc)
  * Quiz 1 and 3 can share classes, quiz 4 and 5 are img, quiz 2 is the only real text one
- * TODO: make the progress bar only 2 segments? green segment expands by 5% when you get question right,
- * vice versa for question wrong? or just keep as individual 20x segments?
  * TODO: make return to menu button reset state for all of the answer objects, etc?? or
  * just try and handle that all through state?
  * TODO: if numAnswered >= 20, show results page
@@ -39,7 +36,8 @@ function QuizCard({
 }: Props) {
     const leftArrow = String.fromCodePoint(0x21e6);
     const rightArrow = String.fromCodePoint(0x21e8);
-    const sampleWidth = "15%";
+    const percentWidth = "5%";
+    const progressWidth = 5;
     const lookUpQuiz: WhichQuizObject = {
         quiz1: 0,
         quiz2: 1,
@@ -89,13 +87,13 @@ function QuizCard({
 
     // Upon re-render, if numAnswered == 20, then change the state of the app
     // to show the results
+    // TODO: fix this. right now throwing weird error
     if (numAnswered >= 20) {
+        setCurrentCard("results");
     }
 
     // handle click functions
-    let handleMenuClick = function (
-        eve: React.MouseEvent<HTMLButtonElement>
-    ): void {
+    let handleMenuClick = function (): void {
         setCurrentCard("menu");
         console.log(submittedQuizAnswers);
     };
@@ -142,9 +140,7 @@ function QuizCard({
             }
             // 4. change style of correct answer button to green (done)
             // 5. if answer is wrong, change submitted answer button to red (done)
-            // 6. update progress bar
-            // 7. change css class to stop buttons from looking like they are
-            // responsive to being clicked??
+            // 6. update progress bar (done)
         }
     };
 
@@ -220,34 +216,38 @@ function QuizCard({
                         Score: {currScore}/20
                     </p>
                     <div className="progress-stacked my-progress">
-                        <div
-                            className="progress"
-                            role="progressbar"
-                            aria-label="Segment one"
-                            aria-valuenow={15}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                            style={{ width: sampleWidth }}
-                        >
-                            <div
-                                className="progress-bar bg-success"
-                                style={{ height: "1rem" }}
-                            ></div>
-                        </div>
-                        <div
-                            className="progress"
-                            role="progressbar"
-                            aria-label="Segment two"
-                            aria-valuenow={15}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                            style={{ width: sampleWidth }}
-                        >
-                            <div
-                                className="progress-bar bg-danger"
-                                style={{ height: "1rem" }}
-                            ></div>
-                        </div>
+                        {Object.keys(isAnswered).map((item, index) => {
+                            return (
+                                <div
+                                    className="progress"
+                                    role="progressbar"
+                                    aria-label={`Segment ${index + 1}`}
+                                    aria-valuenow={progressWidth}
+                                    aria-valuemin={0}
+                                    aria-valuemax={100}
+                                    style={{ width: percentWidth }}
+                                    key={`${item} ${index}`}
+                                >
+                                    <div
+                                        className={`progress-bar bg-${
+                                            isAnswered[item as keyof object] &&
+                                            submittedQuizAnswers[
+                                                index as keyof object
+                                            ] ==
+                                                allQuizzes[quizIndex][index]
+                                                    .correctAnswer
+                                                ? "success"
+                                                : isAnswered[
+                                                      item as keyof object
+                                                  ]
+                                                ? "danger"
+                                                : "my-own-custom"
+                                        }`}
+                                        style={{ height: "1rem" }}
+                                    ></div>
+                                </div>
+                            );
+                        })}
                     </div>
                     <p className="card-text exit-button-container">
                         <button

@@ -68,3 +68,7 @@ div.progress-stacked.my-progress {
 p.card-text.exit-button-container {
     margin-top: 0.5rem;
 }
+
+.bg-my-own-custom {
+    background-color: rgb(52, 58, 63);
+}
