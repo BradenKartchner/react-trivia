@@ -12,12 +12,41 @@ interface Props {
 
 function MenuCard({ highScores }: Props) {
     const smileEmoji = String.fromCodePoint(0x1f92a);
+    const coolEmoji = String.fromCodePoint(0x1f60e);
+    const partyEmoji = String.fromCodePoint(0x1f973);
+    const hmmEmoji = String.fromCodePoint(0x1f9d0);
+    const scaredEmoji = String.fromCodePoint(0x1f628);
+    const mindBlownEmoji = String.fromCodePoint(0x1f92f);
     const quizNames: string[] = [
         "Element name",
         "Element trivia",
         "Molecular formulae",
         "Biological molecules",
         "Amino acid names",
+    ];
+    const emojiArray = [
+        coolEmoji,
+        partyEmoji,
+        hmmEmoji,
+        scaredEmoji,
+        mindBlownEmoji,
+    ];
+    const difficultyArray = [
+        {
+            backgroundColor: "rgb(13, 110, 253)",
+        },
+        {
+            backgroundColor: "rgb(25, 135, 83)",
+        },
+        {
+            backgroundColor: "rgb(255, 193, 7)",
+        },
+        {
+            backgroundColor: "rgb(253, 126, 20)",
+        },
+        {
+            backgroundColor: "rgb(220, 52, 68)",
+        },
     ];
 
     return (
@@ -32,11 +61,20 @@ function MenuCard({ highScores }: Props) {
                         className="card-text menu-buttons"
                         style={{ marginTop: "3rem" }}
                     >
+                        <span className="label-span"></span>
                         <span className="label-span">Quizzes!</span>
-                        <span className="label-span">High Scores:</span>
+                        <span className="label-span high-score-txt">
+                            High Scores:
+                        </span>
                         {Object.keys(highScores).map((item, index) => {
                             return (
                                 <Fragment key={`${item}${index}`}>
+                                    <span
+                                        className="difficulty"
+                                        style={difficultyArray[index]}
+                                    >
+                                        {emojiArray[index]}
+                                    </span>
                                     <button
                                         type="button"
                                         className={`btn btn-${
