@@ -1,14 +1,13 @@
 /**
  * TODO: map over eventual array of questions answered to return progress bar segments
- * TODO: make previous question button not appear for question 1 and next not appear for q20
  * TODO: conditional rendering for either a span or an img depending on which quiz it is, also
  * create conditional classes for what type of span (quiz 1 span, text span for quiz 2, etc)
  * Quiz 1 and 3 can share classes, quiz 4 and 5 are img, quiz 2 is the only real text one
  * TODO: make the progress bar only 2 segments? green segment expands by 5% when you get question right,
  * vice versa for question wrong? or just keep as individual 20x segments?
- * TODO: make the question not shift over when the arrows disappear for questions 1 and 20. or use
- * css to make the button still visible but softer/blurred?
- * TODO: map over answer buttons to keep the code more dry?
+ * TODO: make return to menu button reset state for all of the answer objects, etc?? or
+ * just try and handle that all through state?
+ * TODO: if numAnswered >= 20, show results page
  */
 
 import "./QuizCard.css";
@@ -18,6 +17,10 @@ import { allQuizzes } from "../quiz_data";
 interface Props {
     setCurrentCard: (value: string | ((prevState: string) => string)) => void;
     currentQuiz: string;
+    submittedQuizAnswers: object;
+    setSubmittedQuizAnswers: (
+        value: object | ((prevState: object) => object)
+    ) => void;
 }
 
 interface WhichQuizObject {
@@ -28,11 +31,14 @@ interface WhichQuizObject {
     quiz5: number;
 }
 
-function QuizCard({ setCurrentCard, currentQuiz }: Props) {
+function QuizCard({
+    setCurrentCard,
+    currentQuiz,
+    submittedQuizAnswers,
+    setSubmittedQuizAnswers,
+}: Props) {
     const leftArrow = String.fromCodePoint(0x21e6);
     const rightArrow = String.fromCodePoint(0x21e8);
-    const darkLeftArrow = String.fromCodePoint(0x2b05);
-    const darkRightArrow = String.fromCodePoint(0x27a1);
     const sampleWidth = "15%";
     const lookUpQuiz: WhichQuizObject = {
         quiz1: 0,
@@ -49,16 +55,49 @@ function QuizCard({ setCurrentCard, currentQuiz }: Props) {
         "Match the biological molecule to its name",
         "Match the amino acid to its name",
     ];
+    const initialIsAnswered = {
+        0: false,
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: false,
+        9: false,
+        10: false,
+        11: false,
+        12: false,
+        13: false,
+        14: false,
+        15: false,
+        16: false,
+        17: false,
+        18: false,
+        19: false,
+    };
 
     /* state vars */
     const [currentQuestion, setCurrentQuestion] = useState<number>(0);
-    const [allAnswered, setAllAnswered] = useState<boolean>(false);
+    // for tracking if each question has been answered or not
+    const [isAnswered, setIsAnswered] = useState<object>(initialIsAnswered);
+    // for changing state to results when all questions are answered
+    const [numAnswered, setNumAnswered] = useState<number>(0);
+    // for tracking current score
+    const [currScore, setCurrScore] = useState<number>(0);
+
+    // Upon re-render, if numAnswered == 20, then change the state of the app
+    // to show the results
+    if (numAnswered >= 20) {
+    }
 
     // handle click functions
     let handleMenuClick = function (
         eve: React.MouseEvent<HTMLButtonElement>
     ): void {
         setCurrentCard("menu");
+        console.log(submittedQuizAnswers);
     };
 
     let handleLeftArrowClick = function (): void {
@@ -70,6 +109,42 @@ function QuizCard({ setCurrentCard, currentQuiz }: Props) {
     let handleRightArrowClick = function (): void {
         if (currentQuestion < 19) {
             setCurrentQuestion((prevValue) => prevValue + 1);
+        }
+    };
+
+    let handleAnswerClick = function (
+        eve: React.MouseEvent<HTMLButtonElement>
+    ): void {
+        const myTarget = eve.target as HTMLButtonElement;
+        // console.log(eve);
+        // only do if question isn't already answered
+        if (isAnswered[currentQuestion as keyof object]) {
+            // do nothing
+        } else {
+            // 1. store user answer in submittedQuizAnswers object
+            setSubmittedQuizAnswers({
+                ...submittedQuizAnswers,
+                [currentQuestion]: myTarget.innerText,
+            });
+            // 2. increment numAnswered by 1
+            setNumAnswered((prev) => prev + 1);
+            // 2.5: change isAnswered to true for the correct question number
+            setIsAnswered({
+                ...isAnswered,
+                [currentQuestion]: true,
+            });
+            // 3. if answer is correct, increment quiz score by 1
+            if (
+                myTarget.innerHTML ==
+                allQuizzes[quizIndex][currentQuestion].correctAnswer
+            ) {
+                setCurrScore((prev) => prev + 1);
+            }
+            // 4. change style of correct answer button to green (done)
+            // 5. if answer is wrong, change submitted answer button to red (done)
+            // 6. update progress bar
+            // 7. change css class to stop buttons from looking like they are
+            // responsive to being clicked??
         }
     };
 
@@ -108,15 +183,42 @@ function QuizCard({ setCurrentCard, currentQuiz }: Props) {
                         {allQuizzes[quizIndex][currentQuestion].answers.map(
                             (item, index) => (
                                 <button
-                                    className="btn btn-secondary quiz-answer"
+                                    className={`btn quiz-answer btn-${
+                                        isAnswered[
+                                            currentQuestion as keyof object
+                                        ] &&
+                                        allQuizzes[quizIndex][currentQuestion]
+                                            .answers[index] ==
+                                            allQuizzes[quizIndex][
+                                                currentQuestion
+                                            ].correctAnswer
+                                            ? "success"
+                                            : allQuizzes[quizIndex][
+                                                  currentQuestion
+                                              ].answers[index] !=
+                                                  allQuizzes[quizIndex][
+                                                      currentQuestion
+                                                  ].correctAnswer &&
+                                              allQuizzes[quizIndex][
+                                                  currentQuestion
+                                              ].answers[index] ==
+                                                  submittedQuizAnswers[
+                                                      currentQuestion as keyof object
+                                                  ]
+                                            ? "danger"
+                                            : "secondary"
+                                    }`}
                                     key={`currentQuiz ${index}`}
+                                    onClick={handleAnswerClick}
                                 >
                                     {item}
                                 </button>
                             )
                         )}
                     </p>
-                    <p className="card-text score-container">Score: 0/20</p>
+                    <p className="card-text score-container">
+                        Score: {currScore}/20
+                    </p>
                     <div className="progress-stacked my-progress">
                         <div
                             className="progress"

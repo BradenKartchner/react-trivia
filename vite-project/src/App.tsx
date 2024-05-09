@@ -36,19 +36,37 @@ function App() {
         quiz4Score: 8,
         quiz5Score: 9,
     };
-
-    let initialQuizScores = [
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ];
+    let initialQuizAnswers = {
+        0: "",
+        1: "",
+        2: "",
+        3: "",
+        4: "",
+        5: "",
+        6: "",
+        7: "",
+        8: "",
+        9: "",
+        10: "",
+        11: "",
+        12: "",
+        13: "",
+        14: "",
+        15: "",
+        16: "",
+        17: "",
+        18: "",
+        19: "",
+    };
 
     /* state variables */
     // "menu", "quiz", "results"
     const [currentCard, setCurrentCard] = useState<string>("menu");
     // quiz1, quiz2, quiz3, quiz4, quiz5
     const [currentQuiz, setCurrentQuiz] = useState<string>("");
-    // scores of individual questions of current quiz
-    const [currentQuizScores, setCurrentQuizScores] =
-        useState<Array<number>>(initialQuizScores);
+    // answers to the current quiz
+    const [submittedQuizAnswers, setSubmittedQuizAnswers] =
+        useState<object>(initialQuizAnswers);
     // for objects as state see: https://react.dev/learn/updating-objects-in-state
     const [highScores, setHighScores] = useState<ScoreObject>(
         initialHighScoreObject
@@ -67,6 +85,8 @@ function App() {
                     <QuizCard
                         setCurrentCard={setCurrentCard}
                         currentQuiz={currentQuiz}
+                        submittedQuizAnswers={submittedQuizAnswers}
+                        setSubmittedQuizAnswers={setSubmittedQuizAnswers}
                     />
                 )}
                 {currentCard == "results" && <ScoreCard />}

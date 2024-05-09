@@ -1,5 +1,7 @@
 /**
  * TODO: display either "New high score!" or "high score: x/20" in the subtitle conditionally
+ * TODO: upon clicking either return to menu or try quiz again, reset the state of the
+ * answers, etc. back to the default state
  */
 
 import "./ScoreCard.css";
