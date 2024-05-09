@@ -8,10 +8,21 @@
 
 import "./QuizCard.css";
 
-function QuizCard() {
+interface Props {
+    setCurrentCard: (value: string | ((prevState: string) => string)) => void;
+}
+
+function QuizCard({ setCurrentCard }: Props) {
     const leftArrow = String.fromCodePoint(0x21e6);
     const rightArrow = String.fromCodePoint(0x21e8);
     const sampleWidth = "15%";
+
+    let handleMenuClick = function (
+        eve: React.MouseEvent<HTMLButtonElement>
+    ): void {
+        setCurrentCard("menu");
+    };
+
     return (
         <>
             <div className="card quiz-card" data-bs-theme="dark">
@@ -75,7 +86,10 @@ function QuizCard() {
                         </div>
                     </div>
                     <p className="card-text exit-button-container">
-                        <button className="btn btn-secondary">
+                        <button
+                            className="btn btn-secondary"
+                            onClick={handleMenuClick}
+                        >
                             Return to main menu
                         </button>
                     </p>

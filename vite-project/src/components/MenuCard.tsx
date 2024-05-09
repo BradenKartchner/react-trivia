@@ -8,9 +8,11 @@ import { Fragment } from "react/jsx-runtime";
 
 interface Props {
     highScores: ScoreObject;
+    setCurrentCard: (value: string | ((prevState: string) => string)) => void;
+    setCurrentQuiz: (value: string | ((prevState: string) => string)) => void;
 }
 
-function MenuCard({ highScores }: Props) {
+function MenuCard({ highScores, setCurrentCard, setCurrentQuiz }: Props) {
     const smileEmoji = String.fromCodePoint(0x1f92a);
     const coolEmoji = String.fromCodePoint(0x1f60e);
     const partyEmoji = String.fromCodePoint(0x1f973);
@@ -48,6 +50,18 @@ function MenuCard({ highScores }: Props) {
             backgroundColor: "rgb(220, 52, 68)",
         },
     ];
+    const quizIDs = ["quiz1", "quiz2", "quiz3", "quiz4", "quiz5"];
+
+    let handleClick = function (
+        eve: React.MouseEvent<HTMLButtonElement>
+    ): void {
+        console.log(eve);
+        // 1: setCurrentQuiz to the correct quiz number
+        const myTarget = eve.target as HTMLButtonElement; // screw TS
+        setCurrentQuiz(myTarget.id);
+        // 2: setCurrentCard to "quiz" (and in App pass the current quiz name as props to QuizCard)
+        setCurrentCard("quiz");
+    };
 
     return (
         <>
@@ -80,6 +94,8 @@ function MenuCard({ highScores }: Props) {
                                         className={`btn btn-${
                                             index + 1
                                         } quiz-name`}
+                                        onClick={handleClick}
+                                        id={quizIDs[index]}
                                     >
                                         {quizNames[index]}
                                     </button>

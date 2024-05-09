@@ -1,7 +1,7 @@
 // for quiz 1: do an image (screenshot of modified periodic table) as question, or
 // bother with the formatting of a square div with border with element symbol in middle?
 
-const quiz1 = [
+export const quiz1 = [
     {
         questionNumber: 1,
         question: "H",

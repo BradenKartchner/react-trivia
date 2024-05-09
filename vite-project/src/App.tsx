@@ -1,6 +1,5 @@
 /*
 TODO: make end card to display quiz results
-TODO: modify MenuCard to have 3 columns: difficulty, Quizzes, high score
 TODO: media queries for:
 max height of the cards based on screen size
 max width of the cards based on screen size
@@ -8,6 +7,8 @@ make the card width larger and the text larger for larger screens
 make high scores on menu card wrap to column for smaller screens
 reduce card class padding for mobile and smaller screens
 fix button onHover to do something (see how bootstrap does it for its classes?)
+TODO (optional): add a modal to QuizCard that asks if you are sure if you want to return to main menu
+TODO (optional): add animations to transitions between menu, quiz, and results
  */
 
 import { useState } from "react";
@@ -35,16 +36,29 @@ function App() {
         quiz5Score: 9,
     };
 
-    // state variables
-    // for objects see: https://react.dev/learn/updating-objects-in-state
+    /* state variables */
+    // "menu", "quiz", "results"
+    const [currentCard, setCurrentCard] = useState<string>("menu");
+    // quiz1, quiz2, quiz3, quiz4, quiz5
+    const [currentQuiz, setCurrentQuiz] = useState<string>("");
+    // scores of individual questions of current quiz
+    // for objects as state see: https://react.dev/learn/updating-objects-in-state
     const [highScores, setHighScores] =
         useState<ScoreObject>(initialScoreObject);
     return (
         <>
             <div className="bg-dark">
-                <MenuCard highScores={highScores} />
-                <QuizCard />
-                <ScoreCard />
+                {currentCard == "menu" && (
+                    <MenuCard
+                        highScores={highScores}
+                        setCurrentCard={setCurrentCard}
+                        setCurrentQuiz={setCurrentQuiz}
+                    />
+                )}
+                {currentCard == "quiz" && (
+                    <QuizCard setCurrentCard={setCurrentCard} />
+                )}
+                {currentCard == "results" && <ScoreCard />}
             </div>
         </>
     );
