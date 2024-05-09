@@ -48,6 +48,14 @@ p.card-text.no-margin button {
     font-size: 2rem;
 }
 
+button.transparent {
+    color: transparent;
+}
+
+button.transparent:hover {
+    color: transparent;
+}
+
 p.card-text.score-container {
     margin-bottom: 0.5rem;
 }

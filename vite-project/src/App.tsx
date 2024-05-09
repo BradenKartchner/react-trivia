@@ -16,6 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MenuCard from "./components/MenuCard";
 import QuizCard from "./components/QuizCard";
 import ScoreCard from "./components/ScoreCard";
+import { allQuizzes } from "./quiz_data";
 
 import "./App.css";
 
@@ -28,7 +29,7 @@ export interface ScoreObject {
 }
 
 function App() {
-    let initialScoreObject: ScoreObject = {
+    let initialHighScoreObject: ScoreObject = {
         quiz1Score: 15,
         quiz2Score: 6,
         quiz3Score: 7,
@@ -36,15 +37,22 @@ function App() {
         quiz5Score: 9,
     };
 
+    let initialQuizScores = [
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    ];
+
     /* state variables */
     // "menu", "quiz", "results"
     const [currentCard, setCurrentCard] = useState<string>("menu");
     // quiz1, quiz2, quiz3, quiz4, quiz5
     const [currentQuiz, setCurrentQuiz] = useState<string>("");
     // scores of individual questions of current quiz
+    const [currentQuizScores, setCurrentQuizScores] =
+        useState<Array<number>>(initialQuizScores);
     // for objects as state see: https://react.dev/learn/updating-objects-in-state
-    const [highScores, setHighScores] =
-        useState<ScoreObject>(initialScoreObject);
+    const [highScores, setHighScores] = useState<ScoreObject>(
+        initialHighScoreObject
+    );
     return (
         <>
             <div className="bg-dark">
@@ -56,7 +64,10 @@ function App() {
                     />
                 )}
                 {currentCard == "quiz" && (
-                    <QuizCard setCurrentCard={setCurrentCard} />
+                    <QuizCard
+                        setCurrentCard={setCurrentCard}
+                        currentQuiz={currentQuiz}
+                    />
                 )}
                 {currentCard == "results" && <ScoreCard />}
             </div>
