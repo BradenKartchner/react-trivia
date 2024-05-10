@@ -2,6 +2,11 @@
  * TODO: display either "New high score!" or "high score: x/20" in the subtitle conditionally
  * TODO: upon clicking either return to menu or try quiz again, reset the state of the
  * answers, etc. back to the default state
+ * TODO: pass to ScoreCard as props:
+ * high scores, set high scores, answers to quiz, the quiz itself to compare if answers were
+ * correct, etc
+ * TODO (optional): make a modal that pops up when you click on a question that shows the question,
+ * selected answer, right answer
  */
 
 import "./ScoreCard.css";

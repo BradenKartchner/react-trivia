@@ -88,6 +88,7 @@ function QuizCard({
     // Upon re-render, if numAnswered == 20, then change the state of the app
     // to show the results
     // TODO: fix this. right now throwing weird error
+    // put inside of handleAnswerClick?
     if (numAnswered >= 20) {
         setCurrentCard("results");
     }
