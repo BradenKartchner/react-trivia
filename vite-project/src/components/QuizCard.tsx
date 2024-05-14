@@ -10,6 +10,7 @@
 import "./QuizCard.css";
 import { useState } from "react";
 import { allQuizzes } from "../quiz_data";
+import { initialQuizAnswers } from "../App";
 
 interface Props {
     setCurrentCard: (value: string | ((prevState: string) => string)) => void;
@@ -20,7 +21,7 @@ interface Props {
     ) => void;
 }
 
-interface WhichQuizObject {
+export interface WhichQuizObject {
     quiz1: number;
     quiz2: number;
     quiz3: number;
@@ -85,18 +86,12 @@ function QuizCard({
     // for tracking current score
     const [currScore, setCurrScore] = useState<number>(0);
 
-    // Upon re-render, if numAnswered == 20, then change the state of the app
-    // to show the results
-    // TODO: fix this. right now throwing weird error
-    // put inside of handleAnswerClick?
-    if (numAnswered >= 20) {
-        setCurrentCard("results");
-    }
-
     // handle click functions
     let handleMenuClick = function (): void {
+        // reset answers to blank
+        setSubmittedQuizAnswers(initialQuizAnswers);
         setCurrentCard("menu");
-        console.log(submittedQuizAnswers);
+        //console.log(submittedQuizAnswers);
     };
 
     let handleLeftArrowClick = function (): void {
@@ -115,7 +110,6 @@ function QuizCard({
         eve: React.MouseEvent<HTMLButtonElement>
     ): void {
         const myTarget = eve.target as HTMLButtonElement;
-        // console.log(eve);
         // only do if question isn't already answered
         if (isAnswered[currentQuestion as keyof object]) {
             // do nothing
@@ -138,6 +132,10 @@ function QuizCard({
                 allQuizzes[quizIndex][currentQuestion].correctAnswer
             ) {
                 setCurrScore((prev) => prev + 1);
+            }
+            // >= 19 because re-render hasn't happened yet, so numAnswered isn't updated to 20
+            if (numAnswered >= 19) {
+                setCurrentCard("results");
             }
             // 4. change style of correct answer button to green (done)
             // 5. if answer is wrong, change submitted answer button to red (done)
@@ -168,6 +166,14 @@ function QuizCard({
                         </button>
                         {currentQuiz == "quiz1" && (
                             <span className="question-span">
+                                {
+                                    allQuizzes[quizIndex][currentQuestion]
+                                        .question
+                                }
+                            </span>
+                        )}
+                        {currentQuiz == "quiz2" && (
+                            <span className="quiz2-span">
                                 {
                                     allQuizzes[quizIndex][currentQuestion]
                                         .question

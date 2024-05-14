@@ -65,7 +65,7 @@ function MenuCard({ highScores, setCurrentCard, setCurrentQuiz }: Props) {
 
     return (
         <>
-            <div className="card" data-bs-theme="dark">
+            <div className="card menu-card" data-bs-theme="dark">
                 <div className="card-body">
                     <h5 className="card-title">Chemistry Quizzes</h5>
                     <h6 className="card-subtitle mb-2 text-muted">
@@ -106,6 +106,19 @@ function MenuCard({ highScores, setCurrentCard, setCurrentQuiz }: Props) {
                                 </Fragment>
                             );
                         })}
+                    </p>
+                    <p
+                        className="card-text mb-2 text-muted"
+                        style={{ marginTop: "3rem" }}
+                    >
+                        {"\u00A9"}2024 Braden Kartchner
+                        <br></br>
+                        <a
+                            target="_blank"
+                            href="https://github.com/BradenKartchner"
+                        >
+                            https://github.com/BradenKartchner
+                        </a>
                     </p>
                 </div>
             </div>

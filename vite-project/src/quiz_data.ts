@@ -148,13 +148,6 @@ export const allQuizzes = [
     // Quiz #2, element trivia
     [
         {
-            questionNumber: 1,
-            question: "What is the most abundant element in the universe?",
-            answers: ["Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
-            correctAnswer: "Hydrogen",
-            imgSrc: "",
-        },
-        {
             questionNumber: 2,
             question: "An alpha particle is the nucleus of which element?",
             answers: ["Helium", "Uranium", "Neon", "Plutonium"],
@@ -195,9 +188,118 @@ export const allQuizzes = [
         },
         {
             questionNumber: 7,
-            question: "Which of these gases is radioactive?",
-            answers: ["Chlorine", "Radon", "Xenon", "Argon"],
+            question: "Which of these gases is naturally radioactive?",
+            answers: ["Chlorine", "Radon", "Fluorine", "Argon"],
             correctAnswer: "Radon",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 8,
+            question: "This element is used in super accurate atomic clocks",
+            answers: ["Cesium", "Polonium", "Einsteinium", "Scandium"],
+            correctAnswer: "Cesium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 9,
+            question:
+                "Deficiency of this element in the body leads to thyroid problems",
+            answers: ["Fluorine", "Carbon", "Nitrogen", "Iodine"],
+            correctAnswer: "Iodine",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 10,
+            question:
+                "This element is used to make the strongest permanent magnets",
+            answers: ["Titanium", "Neodymium", "Samarium", "Cadmium"],
+            correctAnswer: "Neodymium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 11,
+            question:
+                "This element is used in the white coloring of the letters on M&Ms",
+            answers: ["Titanium", "Phosphorus", "Magnesium", "Lithium"],
+            correctAnswer: "Titanium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 12,
+            question:
+                "This element has a melting temperature around 10 degrees F less than your body temperature",
+            answers: ["Potassium", "Bromine", "Mercury", "Gallium"],
+            correctAnswer: "Gallium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 1,
+            question: "What is the most abundant element in the universe?",
+            answers: ["Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
+            correctAnswer: "Hydrogen",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 13,
+            question:
+                "This element is a metal found in the medicine Pepto-Bismol",
+            answers: ["Bismuth", "Tin", "Platinum", "Thallium"],
+            correctAnswer: "Bismuth",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 14,
+            question:
+                "This element is key to the non-stick properties of Teflon coatings",
+            answers: ["Boron", "Fluorine", "Phosphorus", "Sulfur"],
+            correctAnswer: "Fluorine",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 15,
+            question:
+                "The metal ion in hydroxyapatite, the mineral that makes up most of the mass of human bones",
+            answers: ["Lithium", "Sodium", "Calcium", "Magnesium"],
+            correctAnswer: "Calcium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 16,
+            question:
+                "This element reversibly binds to oxygen to deliver it to cells in your body",
+            answers: ["Zinc", "Manganese", "Iron", "Potassium"],
+            correctAnswer: "Iron",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 17,
+            question:
+                "This element works with iron to convert oxygen to water in the electron transport chain",
+            answers: ["Copper", "Magnesium", "Zinc", "Aluminum"],
+            correctAnswer: "Copper",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 18,
+            question:
+                "This element has the highest atomic number known to exist in bulk in nature",
+            answers: ["Plutonium", "Uranium", "Thorium", "Neptunium"],
+            correctAnswer: "Uranium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 19,
+            question: "This element was discovered by Marie and Pierre Curie",
+            answers: ["Polonium", "Francium", "Thorium", "Curium"],
+            correctAnswer: "Polonium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 20,
+            question:
+                "This element used to be added to gasoline to prevent engine knocking",
+            answers: ["Chromium", "Titanium", "Magnesium", "Lead"],
+            correctAnswer: "Lead",
             imgSrc: "",
         },
     ],
@@ -730,7 +832,7 @@ export const allQuizzes = [
         {
             questionNumber: 20,
             question: "",
-            imgSrc: "./quiz5images/q20.png",
+            imgSrc: "./quiz5images/newq20.png",
             answers: ["Threonine", "Arginine", "Glutamate", "Asparagine"],
             correctAnswer: "Glutamate",
         },

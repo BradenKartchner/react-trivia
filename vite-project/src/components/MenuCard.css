@@ -44,6 +44,13 @@
     background-color: rgb(10, 31, 82);
 }
 
+div.card.menu-card {
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+}
+
 .card div {
     width: 24rem;
     place-items: center;

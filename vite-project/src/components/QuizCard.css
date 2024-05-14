@@ -29,6 +29,13 @@ span.question-span {
     border-radius: 0.5rem;
 }
 
+span.quiz2-span {
+    outline: 0.1rem solid white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 15rem;
+}
+
 .card-body p.card-text.answer-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;

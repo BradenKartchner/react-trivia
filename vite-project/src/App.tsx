@@ -28,35 +28,36 @@ export interface ScoreObject {
     quiz5Score: number;
 }
 
+export const initialQuizAnswers = {
+    0: "",
+    1: "",
+    2: "",
+    3: "",
+    4: "",
+    5: "",
+    6: "",
+    7: "",
+    8: "",
+    9: "",
+    10: "",
+    11: "",
+    12: "",
+    13: "",
+    14: "",
+    15: "",
+    16: "",
+    17: "",
+    18: "",
+    19: "",
+};
+
 function App() {
     let initialHighScoreObject: ScoreObject = {
-        quiz1Score: 15,
-        quiz2Score: 6,
-        quiz3Score: 7,
-        quiz4Score: 8,
-        quiz5Score: 9,
-    };
-    let initialQuizAnswers = {
-        0: "",
-        1: "",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: "",
-        7: "",
-        8: "",
-        9: "",
-        10: "",
-        11: "",
-        12: "",
-        13: "",
-        14: "",
-        15: "",
-        16: "",
-        17: "",
-        18: "",
-        19: "",
+        quiz1Score: 0,
+        quiz2Score: 0,
+        quiz3Score: 0,
+        quiz4Score: 0,
+        quiz5Score: 0,
     };
 
     /* state variables */
@@ -89,7 +90,16 @@ function App() {
                         setSubmittedQuizAnswers={setSubmittedQuizAnswers}
                     />
                 )}
-                {currentCard == "results" && <ScoreCard />}
+                {currentCard == "results" && (
+                    <ScoreCard
+                        submittedQuizAnswers={submittedQuizAnswers}
+                        setSubmittedQuizAnswers={setSubmittedQuizAnswers}
+                        currentQuiz={currentQuiz}
+                        setCurrentCard={setCurrentCard}
+                        highScores={highScores}
+                        setHighScores={setHighScores}
+                    />
+                )}
             </div>
         </>
     );
