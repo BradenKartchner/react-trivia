@@ -91,7 +91,7 @@ function ScoreCard({
                     </h6>
                     <p className="card-text results-display">
                         {Object.keys(submittedQuizAnswers).map(
-                            (item, index) => (
+                            (_item, index) => (
                                 <span
                                     className={`score-box ${
                                         submittedQuizAnswers[

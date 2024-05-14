@@ -16,7 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MenuCard from "./components/MenuCard";
 import QuizCard from "./components/QuizCard";
 import ScoreCard from "./components/ScoreCard";
-import { allQuizzes } from "./quiz_data";
+// import { allQuizzes } from "./quiz_data";
 
 import "./App.css";
 
