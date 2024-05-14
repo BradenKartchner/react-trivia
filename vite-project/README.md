@@ -15,7 +15,28 @@
 
 ## To do list
 
--   create Favicon for website
+## Quiz 4 list of molecules
+
+-   Hemoglobin
+-   Heme
+-   Phosphatidylserine
+-   Arachidonic acid
+-   Glycerol
+-   choline
+-   carnitine
+-   cholesterol
+-   testosterone
+-   estradiol (one of the estrogens)
+-   NADH
+-   flavin
+-   Beta-D-Glucose
+-   D-Fructose
+-   oxaloacetate
+-   biotin
+-   Ribose
+-   Adenine
+-   Thymine
+-   caffeine
 
 ## History of installed packages
 
