@@ -142,6 +142,8 @@ function QuizCard({
             // 4. change style of correct answer button to green (done)
             // 5. if answer is wrong, change submitted answer button to red (done)
             // 6. update progress bar (done)
+            // 7. After handling all of this, display results card if
+            // numAnswered >= 20 (how to handle not updating before rerender?)
         }
     };
 
@@ -164,9 +166,27 @@ function QuizCard({
                         >
                             {leftArrow}
                         </button>
-                        <span className="question-span">
-                            {allQuizzes[quizIndex][currentQuestion].question}
-                        </span>
+                        {currentQuiz == "quiz1" && (
+                            <span className="question-span">
+                                {
+                                    allQuizzes[quizIndex][currentQuestion]
+                                        .question
+                                }
+                            </span>
+                        )}
+                        {(currentQuiz == "quiz3" ||
+                            currentQuiz == "quiz4" ||
+                            currentQuiz == "quiz5") && (
+                            <img
+                                src={
+                                    allQuizzes[quizIndex][currentQuestion]
+                                        .imgSrc
+                                }
+                                className="quiz-photo"
+                                alt="picture of quiz question"
+                                id="quizImage"
+                            ></img>
+                        )}
                         <button
                             className={`btn change-question ${
                                 currentQuestion == 19 && "transparent"

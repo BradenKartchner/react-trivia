@@ -38,6 +38,29 @@
 -   Thymine
 -   caffeine
 
+## Quiz 5 list of molecules
+
+-   Phenylalanine
+-   Glycine
+-   Asparagine
+-   Cysteine
+-   Isoleucine
+-   Threonine
+-   Proline
+-   Glutamine
+-   Valine
+-   Tyrosine
+-   Lysine
+-   Aspartate
+-   Alanine
+-   Arginine
+-   Tryptophan
+-   Methionine
+-   Leucine
+-   Serine
+-   Histidine
+-   Glutamate
+
 ## History of installed packages
 
 "npm install --save bootstrap"
