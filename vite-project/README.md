@@ -12,6 +12,7 @@
 ## Optional features to try and implement
 
 -   Smooth transitions and animations
+-   Show the question when you click on the numbered box on results screen
 
 ## To do list
 
