@@ -146,7 +146,61 @@ export const allQuizzes = [
         },
     ],
     // Quiz #2, element trivia
-    [],
+    [
+        {
+            questionNumber: 1,
+            question: "What is the most abundant element in the universe?",
+            answers: ["Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
+            correctAnswer: "Hydrogen",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 2,
+            question: "An alpha particle is the nucleus of which element?",
+            answers: ["Helium", "Uranium", "Neon", "Plutonium"],
+            correctAnswer: "Helium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 3,
+            question:
+                "Diamonds, graphite, and graphene are all made of which element?",
+            answers: ["Silicon", "Titanium", "Boron", "Carbon"],
+            correctAnswer: "Carbon",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 4,
+            question:
+                "The only metal element that is liquid at room temperature",
+            answers: ["Cesium", "Sodium", "Mercury", "Bromine"],
+            correctAnswer: "Mercury",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 5,
+            question:
+                "This element doesn't have a biological role in your body",
+            answers: ["Cobalt", "Cadmium", "Magnesium", "Sodium"],
+            correctAnswer: "Cadmium",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 6,
+            question:
+                "This element has the highest melting point of all the metal elements",
+            answers: ["Tungsten", "Lead", "Osmium", "Rhodium"],
+            correctAnswer: "Tungsten",
+            imgSrc: "",
+        },
+        {
+            questionNumber: 7,
+            question: "Which of these gases is radioactive?",
+            answers: ["Chlorine", "Radon", "Xenon", "Argon"],
+            correctAnswer: "Radon",
+            imgSrc: "",
+        },
+    ],
     // Quiz #3, molecular formulae
     [
         {
